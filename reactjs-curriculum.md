@@ -8,7 +8,6 @@
 > **Project cuối khóa:** Build Frontend cho Backend `shoppingCardBE` trong `learnNodeJS/ch04-shoppingCardProject/shoppingCardBE`.  
 > **Triết lý:** "Pain-Driven Development: Code thủ công cho thấy khổ (useState/useEffect) -> Dùng thư viện giải cứu (RHF/Query)."
 
-
 ---
 
 ## ✅ TECH STACK CHÍNH THỨC CỦA KHÓA HỌC
@@ -41,7 +40,7 @@
 
 ---
 
-## 🎯 LEARNING OUTCOMES (Đo được - Measurable)
+## 🎯 LEARNING OUTCOMES (Measurable)
 
 Sau khóa, học viên có thể:
 
@@ -50,33 +49,33 @@ Sau khóa, học viên có thể:
    - Viết functional component với TypeScript (props, state, events)
    - Render list với key đúng chuẩn
    - Quản lý local state với useState, useEffect đúng chỗ
-   - **Đo:** Build 1 todo app trong 1 giờ
+   - **Measurable:** Build 1 todo app trong 1 giờ
 
 2. **API Handling (Core Skill)**
 
    - Setup axios instance với baseURL, headers, interceptors
    - Normalize API errors (422/401/500) và hiển thị UI rõ ràng
    - Implement refresh token flow (basic - no complex patterns)
-   - **Đo:** Implement login/register/logout trong 2 giờ
+   - **Measurable:** Implement login/register/logout trong 2 giờ
 
 3. **React Query (Server State)**
 
    - Dùng useQuery với loading/error/empty states
    - Dùng useMutation với proper invalidation
    - Invalidate cache đúng chuẩn
-   - **Đo:** Build CRUD page với React Query trong 3 giờ
+   - **Measurable:** Build CRUD page với React Query trong 3 giờ
 
 4. **Form & Validation**
 
    - Build form với RHF + Zod
    - Map 422 errors về field-level
-   - **Đo:** Build register form (5+ fields) trong 1.5 giờ
+   - **Measurable:** Build register form (5+ fields) trong 1.5 giờ
 
 5. **Production Readiness**
    - Code có structure rõ ràng (pages/components/lib/api)
    - UI có loading/error/empty states đầy đủ
    - Auth flow hoàn chỉnh (login/logout/protected routes)
-   - **Đo:** Review code peer đạt 8/10 điểm
+   - **Measurable:** Review code peer đạt 8/10 điểm
 
 ---
 
@@ -104,6 +103,7 @@ _Giảng viên bắt buộc vẽ mô hình này lên bảng ngay buổi đầu t
    - **Local state**: useState (input UI nhỏ)
 
 4. **Core Features (CUT SCOPE)**
+
    - JWT auth: access/refresh (SIMPLIFIED - no single-flight)
    - **Auth flows:** Register, Login, Logout, Get Me, Update Me, Change Password
    - **Bỏ:** Verify email, Resend verify, Forgot password, Reset password
@@ -113,16 +113,17 @@ _Giảng viên bắt buộc vẽ mô hình này lên bảng ngay buổi đầu t
 
 5. **🧠 State Boundary Rules (MUST MEMORIZE)**
 
-| Loại dữ liệu | Công cụ | Ví dụ |
-| :--- | :--- | :--- |
-| **Server State** | **React Query** | `user`, `products`, `cart` |
-| **Global UI State** | **Zustand** | `auth_tokens`, `theme`, `sidebar_open` |
-| **Local UI State** | **useState** | `modal_open`, `input_value`, `is_loading` |
-| **Form State** | **React Hook Form** | `login_form`, `register_form` |
+| Loại dữ liệu        | Công cụ             | Ví dụ                                     |
+| :------------------ | :------------------ | :---------------------------------------- |
+| **Server State**    | **React Query**     | `user`, `products`, `cart`                |
+| **Global UI State** | **Zustand**         | `auth_tokens`, `theme`, `sidebar_open`    |
+| **Local UI State**  | **useState**        | `modal_open`, `input_value`, `is_loading` |
+| **Form State**      | **React Hook Form** | `login_form`, `register_form`             |
 
-> **❌ Rule:** Không nhét Server Data vào Zustand. Không dùng useEffect để fetch data. 
+> **❌ Rule:** Không nhét Server Data vào Zustand. Không dùng useEffect để fetch data.
 
 6. **📁 File Structure Rules (Mentor-Safe)**
+
 - Component > 150 dòng → **Tách**.
 - Page > 300 dòng → **Tách hooks / sub-components**.
 - API logic → Luôn ở `lib/api`.
@@ -174,13 +175,14 @@ _Giảng viên bắt buộc vẽ mô hình này lên bảng ngay buổi đầu t
 
 ```ts
 interface ApiError {
-  status: number
-  message: string
-  errors?: Record<string, string> // Field validation errors
+  status: number;
+  message: string;
+  errors?: Record<string, string>; // Field validation errors
 }
 ```
 
 **UI Handling Rule:**
+
 - **422 (Validation):** Show field errors (map `errors` vào RHF).
 - **401 (Auth):** Auto Refresh -> Fail thì Logout.
 - **403 (Permission):** Toast error + Redirect.
@@ -188,18 +190,21 @@ interface ApiError {
 - **Network Error:** Toast.
 
 ### 🌍 ENV & CONFIG RULES
+
 - **File:** `.env` (không commit lên git).
 - **Variable:** `VITE_API_URL=http://localhost:3000`
-- **Rule:** 
+- **Rule:**
   - ❌ KHÔNG dùng `process.env`.
   - ✅ BẮT BUỘC dùng `import.meta.env.VITE_API_URL`.
 
 ---
 
-## ⏱️ PHÂN BỔ THỜI GIAN (KHÓA 2 THÁNG - 16 BUỔI)
+## ⏱️ PHÂN BỔ THỜI GIAN (KHÓA 2 THÁNG - 18 BUỔI)
 
-- React Core + TypeScript: ~35% (6 buổi)
-- API & Data Handling (Zustand + Axios + React Query): ~30% (5 buổi)
+> **Lưu ý:** Buổi 0 là Foundation session (90 phút) - có thể gán vào pre-course hoặc Tuần 1.
+
+- React Core + TypeScript: ~35% (6 buổi: Buổi 0-4, Buổi 6)
+- API & Data Handling (Zustand + Axios + React Query): ~30% (5 buổi: Buổi 5, 7-10)
 - UI & Form (Tailwind, shadcn, RHF, Zod): ~15% (2 buổi - combined)
 - Project Sprint + Review: ~20% (3 buổi)
 
@@ -219,6 +224,7 @@ interface ApiError {
 - [ ] Render list + state cơ bản
 
 ### BUỔI 0: REACT FOUNDATION & DEVELOPER MINDSET
+
 > **Tài liệu:** `session-00-react-foundation`
 
 🎬 **OPENING SCRIPT (5 phút)**
@@ -242,15 +248,17 @@ _"Chào các bạn. Trước khi viết dòng code React đầu tiên, chúng ta
 - **JSX là gì (đúng cách):**
   - JSX = cách viết UI bằng JS
   - `<h1>Hello</h1>` = `React.createElement("h1", null, "Hello")`
+  - **JSX Children:** `<Button>Click Me</Button>` → `children` prop
+  - **Conditional Rendering (intro):** `{isLoggedIn && <Profile />}`, `{count > 5 ? 'High' : 'Low'}`
 - **Hooks là gì (concept only):**
   - Hook = hàm đặc biệt để làm việc với state/lifecycle
   - Hook bắt đầu bằng `use` (useState, useEffect, useRef)
   - Rules: chỉ gọi trong component, phải ở top level
-  - Chi tiết sẽ học ở Session 2
+  - Chi tiết `useState` sẽ học ở Session 1, `useEffect` ở Session 4.
 - **Demo tối thiểu:**
   ```jsx
   function App() {
-    return <h1>Hello React</h1>
+    return <h1>Hello React</h1>;
   }
   ```
   - Chỉ để thấy React app chạy được
@@ -266,6 +274,7 @@ _"Chào các bạn. Trước khi viết dòng code React đầu tiên, chúng ta
 ---
 
 ### BUỔI 1: SETUP + COMPONENT THINKING + TS SURVIVAL KIT
+
 > **Tài liệu:** `session-01-setup-ts`
 
 🎬 **OPENING SCRIPT (5 phút)**
@@ -276,7 +285,7 @@ _"Các bạn đã biết HTML/CSS/JS, đã biết call API trong dự án MERN. 
    - Setup Vite + React 18 + TS + **Tailwind v4**
    - Config **Absolute Imports** (`@/components`, `@/lib`)
    - Folder structure cơ bản
-   - **TypeScript Survival Kit**: Props, Events, Hooks generics (30 phút)
+   - **TypeScript Survival Kit**: Props, Events, **Basic useState Generics** (30 phút)
 
 2. **🧠 Mental Model**
 
@@ -289,6 +298,7 @@ _"Các bạn đã biết HTML/CSS/JS, đã biết call API trong dự án MERN. 
    - Tạo layout `MainLayout`
    - Tạo `Button`, `Input` (chưa shadcn)
    - **Setup & Config** (15 phút):
+
      - `vite.config.ts` alias (`@`)
      - `tsconfig.json` paths
      - Tailwind v4 setup (CSS-first configuration)
@@ -333,6 +343,7 @@ _"Các bạn đã biết HTML/CSS/JS, đã biết call API trong dự án MERN. 
 ---
 
 ### BUỔI 2: PROPS, LIST, STATE
+
 > **Tài liệu:** `session-02-props-state`
 
 🎬 **OPENING SCRIPT (5 phút)**  
@@ -342,13 +353,117 @@ _"React không mạnh ở chỗ viết HTML trong JS, mà mạnh ở chỗ rende
 
    - Props, list rendering + `key`
    - `useState` + event handlers
+   - **JSX Deep Dive (20p):** Children, Conditional Rendering, Fragments
+   - **Props Flow (15p):** Props down, Events up (callback pattern)
+   - **State Patterns (15p):** Controlled vs Uncontrolled inputs (intro)
    - Tránh derived state
    - **Mini Foundation (15p):** React Rendering Model (Virtual DOM, Re-render triggers)
 
 2. **📚 Live Coding**
 
+   - **JSX Patterns (20 phút - ĐẦU GIỜ):**
+
+     ```jsx
+     // 1. Children prop
+     function Card({ children, title }) {
+       return (
+         <div className="card">
+           <h2>{title}</h2>
+           {children} {/* Nhận bất kỳ nội dung gì */}
+         </div>
+       );
+     }
+     <Card title="Product">
+       <p>Description</p>
+     </Card>;
+
+     // 2. Conditional rendering patterns
+     {
+       isLoading && <Spinner />;
+     }
+     {
+       /* AND operator */
+     }
+     {
+       error ? <Error /> : <Content />;
+     }
+     {
+       /* Ternary */
+     }
+     {
+       items.length === 0 && <EmptyState />;
+     }
+
+     // 3. Fragment (<> </>) - no extra div
+     <>
+       <h1>Title</h1>
+       <p>Text</p>
+     </>;
+     ```
+
+   - **Props Flow Pattern (15 phút):**
+
+     ```jsx
+     // Parent: Props down, Events up
+     function ProductList() {
+       const [liked, setLiked] = useState([]);
+
+       const handleLike = (id) => {  // Event handler ở Parent
+         setLiked([...liked, id]);
+       };
+
+       return products.map(p => (
+         <ProductCard
+           key={p.id}
+           product={p}  {/* Props down */}
+           onLike={handleLike}  {/* Event callback down */}
+         />
+       ));
+     }
+
+     // Child: Chỉ nhận props và gọi callback
+     function ProductCard({ product, onLike }) {
+       return (
+         <button onClick={() => onLike(product.id)}>  {/* Event up */}
+           Like
+         </button>
+       );
+     }
+     ```
+
+     > _"Rule: State ở Parent, Child chỉ nhận props và gọi callback. Không đặt state ở Child nếu Parent cần biết."_
+
+   - **Controlled Input Pattern (15 phút - CRITICAL):**
+
+     ```jsx
+     // Controlled: React kiểm soát value
+     function SearchBox() {
+       const [search, setSearch] = useState("");
+
+       return (
+         <input
+           value={search} // Controlled by React state
+           onChange={(e) => setSearch(e.target.value)}
+         />
+       );
+     }
+
+     // Uncontrolled: DOM giữ value (dùng ref)
+     function UncontrolledForm() {
+       const inputRef = useRef();
+
+       const handleSubmit = () => {
+         console.log(inputRef.current.value); // Read từ DOM
+       };
+
+       return <input ref={inputRef} />;
+     }
+     ```
+
+     > _"Rule of Thumb: Controlled cho input cần validation realtime. Uncontrolled cho form đơn giản (RHF dùng uncontrolled under hood)."_
+
    - Mock products array
-   - Search/filter local
+   - Search/filter local (controlled input)
    - Like/Favorite toggle (UI state)
 
 3. **🧪 Checkpoint**
@@ -356,18 +471,104 @@ _"React không mạnh ở chỗ viết HTML trong JS, mà mạnh ở chỗ rende
    - Render list 20 items, có filter, không warning key
 
 4. **🚨 Red Flags**
+
    - Dùng for-loop trong JSX
    - Mutate state trực tiếp
+   - Đặt state ở Child khi Parent cần biết (state phải ở common ancestor)
+   - Dùng Controlled input không có onChange (React warning)
+   - Quên `key` khi render list (performance issue)
 
-4. **🧠 Mini Foundation: React Rendering (15 phút)**
+5. **🧠 Mini Foundation: React Rendering (15 phút)**
+
    - **Question:** "Khi nào một component render lại?"
    - **Answer:**
      1. State thay đổi (`setCount`).
      2. Props thay đổi.
      3. Cha render -> Con render (mặc định).
    - **Demo:** `console.log('render')` để chứng minh.
+   - **Parent/Child Re-render Flow:**
+
+     ```jsx
+     function Parent() {
+       const [count, setCount] = useState(0);
+       console.log("Parent render");
+
+       return (
+         <div>
+           <button onClick={() => setCount(count + 1)}>Count: {count}</button>
+           <Child name="John" /> {/* Child cũng re-render */}
+         </div>
+       );
+     }
+
+     function Child({ name }) {
+       console.log("Child render"); // Chạy mỗi khi Parent render
+       return <p>Hello {name}</p>;
+     }
+     ```
+
+     > _"Quan trọng: Parent re-render → tất cả Child re-render (mặc định). Session sau học React.memo để optimize."_
+
    - **Concept:** Virtual DOM Diffing (React không update DOM thật ngay, mà tính toán sự khác biệt).
    - **❗ Rule of Thumb (Production):** Hạn chế derived state, chỉ dùng state cho data thay đổi theo thời gian và kích hoạt render.
+
+---
+
+### ✅ CHECKLIST TUẦN 1: REACT CORE CONCEPTS
+
+> **Giáo viên bắt buộc hỏi học viên TRƯỚC KHI chuyển sang Tuần 2:**
+
+**JSX & Component Patterns:**
+
+- [ ] Viết được component nhận `children` prop
+- [ ] Render conditional với `&&` và ternary `? :`
+- [ ] Biết khi nào dùng Fragment `<> </>` thay vì `<div>`
+- [ ] Hiểu JSX expression `{}` chỉ nhận expression, không nhận if/else
+
+**Props & Events:**
+
+- [ ] Truyền props từ Parent xuống Child
+- [ ] Truyền callback function từ Parent để Child gọi (Events up)
+- [ ] Hiểu "Props down, Events up" pattern
+- [ ] Không mutate props trong Child
+
+**State & Re-render:**
+
+- [ ] Dùng `useState` đúng (không mutate trực tiếp)
+- [ ] Hiểu khi nào component re-render (state/props thay đổi, parent render)
+- [ ] Hiểu Parent render → Child cũng render (mặc định)
+- [ ] Biết Controlled input (value + onChange) vs Uncontrolled (ref)
+
+**List Rendering:**
+
+- [ ] Render list với `.map()` và `key` đúng
+- [ ] Hiểu tại sao `key` quan trọng (React diffing)
+- [ ] Không dùng index làm key nếu list có thể thay đổi thứ tự
+
+**TypeScript cho React:**
+
+- [ ] Định nghĩa Props interface
+- [ ] Type cho event handlers (`React.ChangeEvent`, `React.FormEvent`)
+- [ ] Type cho `useState` với generics: `useState<User | null>(null)`
+
+**🚨 Anti-patterns phải tránh:**
+
+- ❌ Mutate state trực tiếp: `state.push()` → dùng `setState([...state, newItem])`
+- ❌ Đặt state ở Child khi Parent cần biết → state phải ở common ancestor
+- ❌ Quên `key` khi render list
+- ❌ Dùng `any` type cho props/events
+- ❌ Controlled input không có `onChange` handler
+
+**🎯 Checkpoint Exercise (10 phút):**
+
+Code challenge: Viết `TodoList` component:
+
+- Input controlled để add todo
+- Render list todos với delete button
+- Parent giữ state `todos`, Child chỉ nhận props và callbacks
+- Có empty state khi `todos.length === 0`
+
+> **Pass criteria:** Code chạy, không warning, follow "Props down Events up" pattern.
 
 ---
 
@@ -379,6 +580,7 @@ _"React không mạnh ở chỗ viết HTML trong JS, mà mạnh ở chỗ rende
 - [ ] Có protected routes logic (UI only, chưa có token thật)
 
 ### BUỔI 3: ROUTER V6 + LAYOUT PATTERN
+
 > **Tài liệu:** `session-03-router-layout`
 
 🎬 **OPENING SCRIPT (5 phút)**  
@@ -401,6 +603,7 @@ _"App thật không có 1 trang. Hôm nay ta dựng routing + layout để chu�
 ---
 
 ### BUỔI 4: PROTECTED ROUTES LOGIC + UI STATES
+
 > **Tài liệu:** `session-04-protected-routes`
 
 🎬 **OPENING SCRIPT (5 phút)**
@@ -421,6 +624,7 @@ _"Bảo vệ route là bước 1 của auth. Chưa login thì không cho vào /m
    - Loading component, Error component, Empty component templates
 
 3. **🚨 Red Flags**
+
    - Flash UI private content trước khi redirect
 
 4. **🧠 Mini Foundation: useEffect Rules (15 phút)**
@@ -443,6 +647,7 @@ _"Bảo vệ route là bước 1 của auth. Chưa login thì không cho vào /m
 - [ ] Biết dùng Tailwind v4 + shadcn/ui
 
 ### BUỔI 5: ZUSTAND AUTH STORE + TOKEN PERSISTENCE
+
 > **Tài liệu:** `session-05-zustand-auth`
 
 🎬 **OPENING SCRIPT (5 phút)**
@@ -452,22 +657,50 @@ _"Trước khi gọi API, ta cần nơi lưu token. Zustand là global state nh�
 
    - Zustand store: `accessToken`, `refreshToken`, `isAuthed`
    - Token persistence (localStorage)
+   - **Selector Pattern (CRITICAL):** Tránh re-render không cần thiết
    - Component `RequireAuth` dùng token thật
 
 2. **📚 Live Coding**
 
    - Tạo `auth.store.ts`: `setTokens`, `clearTokens`, `selectIsAuthed`
    - LocalStorage persistence (key: `shoppingCardFE.tokens`)
+
+   - **Selector Pattern (20 phút - CRITICAL):**
+
+     ```ts
+     // ❌ SAI - Lấy toàn bộ store → re-render khi bất kỳ field nào đổi
+     const store = useAuthStore();
+     const isAuthed = !!store.accessToken;
+
+     // ✅ ĐÚNG - Chỉ subscribe field cần thiết
+     const isAuthed = useAuthStore((state) => !!state.accessToken);
+     const accessToken = useAuthStore((state) => state.accessToken);
+
+     // ✅ ĐÚNG - Multiple fields với shallow compare
+     import { shallow } from "zustand/shallow";
+     const { accessToken, refreshToken } = useAuthStore(
+       (state) => ({
+         accessToken: state.accessToken,
+         refreshToken: state.refreshToken,
+       }),
+       shallow
+     );
+     ```
+
+     > _"❗ Rule of Thumb: Luôn dùng selector. Chỉ lấy fields bạn cần. Tránh `useAuthStore()` không tham số."_
+
    - Update `RequireAuth` dùng `selectIsAuthed` từ store
    - Mock login: set token giả để test
 
 3. **🚨 Red Flags**
    - Nhét server data vào Zustand (sai vai trò - dùng React Query)
    - Reload trang mất token (quên persistence)
+   - **Dùng `useAuthStore()` không selector → re-render không cần thiết**
 
 ---
 
 ### BUỔI 6: TAILWIND V4 + SHADCN/UI PRACTICAL
+
 > **Tài liệu:** `session-06-ui-practical`
 
 🎬 **OPENING SCRIPT (5 phút)**  
@@ -509,6 +742,7 @@ _"UI không cần quá đẹp, nhưng phải sạch và nhất quán. Tailwind v
 - [ ] Zod validate trước khi gọi API
 
 ### BUỔI 7: AXIOS LAYER + INTERCEPTORS (SIMPLIFIED REFRESH)
+
 > **Tài liệu:** `session-07-axios-interceptors`
 
 🎬 **OPENING SCRIPT (5 phút)**
@@ -534,6 +768,7 @@ _"Gọi được API là level thấp. Level production là: code gọi API có 
      }`;
      ```
    - Response interceptor (SIMPLIFIED - no queue/single-flight):
+
      ```ts
      if (status === 401 && !config.__isRetry) {
        try {
@@ -555,8 +790,48 @@ _"Gọi được API là level thấp. Level production là: code gọi API có 
        }
      }
      ```
+
    - Error normalization cho 422/401/500/network
    - Tạo `lib/api/users.api.ts`: register, login, logout, getMe, updateMe, changePassword
+
+   - **⚠️ Backend Response Inconsistency (10 phút - CRITICAL WARNING):**
+
+     > _"Backend của ta KHÔNG nhất quán. FE phải normalize!"_
+
+     ```ts
+     // Backend inconsistent:
+     // /login trả:  { message, result: { access_token, refresh_token } }
+     // /register trả: { msg, data: { access_token, refresh_token } }
+     // /me trả: { message, result: { user } }
+
+     // ❗ FE phải normalize trong service layer:
+     export const usersApi = {
+       async login(credentials: LoginDto) {
+         const { data } = await apiClient.post("/users/login", credentials);
+         // Normalize: luôn trả { accessToken, refreshToken }
+         return {
+           accessToken: data.result.access_token,
+           refreshToken: data.result.refresh_token,
+         };
+       },
+
+       async register(userData: RegisterDto) {
+         const { data } = await apiClient.post("/users/register", userData);
+         // Backend dùng 'data' thay vì 'result'
+         return {
+           accessToken: data.data.access_token,
+           refreshToken: data.data.refresh_token,
+         };
+       },
+     };
+     ```
+
+     **❗ Rule of Thumb:**
+
+     - **KHÔNG tin backend 100%** - luôn normalize response trong service layer
+     - **KHÔNG dùng raw API response** trực tiếp trong component
+     - **TypeScript interface** cho Frontend khác với Backend
+     - **Document inconsistencies** trong code comments
 
 3. **🚨 Red Flags**
    - Axios gọi thẳng trong component
@@ -567,6 +842,7 @@ _"Gọi được API là level thấp. Level production là: code gọi API có 
 ---
 
 ### BUỔI 8: FORMS (RHF + ZOD) - MAP ĐÚNG BE
+
 > **Tài liệu:** `session-08-form-rhf-zod`
 
 🎬 **OPENING SCRIPT (5 phút)**
@@ -627,6 +903,7 @@ _"Form là nơi học viên bắt đầu sai: validate rối, submit bừa, UI k
    - Button disable khi `isSubmitting`
 
 3. **🔥 Pain-Driven Demo: Why RHF? (10 phút - ĐẦU GIỜ)**
+
    - **Demo:** Code 1 form React thuần (Controlled) với 3 inputs + validation thủ công.
    - **Pain point:**
      - Re-render logic từng ký tự (`console.log('render')`).
@@ -635,7 +912,7 @@ _"Form là nơi học viên bắt đầu sai: validate rối, submit bừa, UI k
    - **Solution:** RHF (Uncontrolled under hood) -> Không re-render, code gọn, performance cao.
    - **❗ Rule of Thumb (Production):** Luôn dùng Uncontrolled Form (RHF) cho form > 3 inputs hoặc form có validation phức tạp. Controlled chỉ dành cho input đơn lẻ (Search, Filter).
 
-3. **🧪 Checkpoint**
+4. **🧪 Checkpoint**
    - Register form chỉ submit khi schema pass
    - 422 show đúng field errors dưới input
    - Button disable khi pending
@@ -652,6 +929,7 @@ _"Form là nơi học viên bắt đầu sai: validate rối, submit bừa, UI k
 - [ ] UI: loading/error/empty states
 
 ### BUỔI 9: QUERY (FETCH) CHUẨN LOADING/ERROR/CACHE
+
 > **Tài liệu:** `session-09-react-query`
 
 🎬 **OPENING SCRIPT (5 phút)**
@@ -679,24 +957,27 @@ _"Server state không phải UI state. React Query sẽ lo cache/refetch/retry. 
    - Query `/users/me`:
 
      #### 🔥 Pain-Driven Demo: Manual Fetching (15 phút - ĐẦU GIỜ)
+
      > **Mục tiêu:** Chứng minh `useEffect` fetching quá cực khổ -> Cần React Query.
-     
+
      **Code thử (Demo Only - Don't use):**
+
      ```tsx
      // The "Painful" Way
      useEffect(() => {
-       setLoading(true)
-       api.get('/users/me')
-         .then(res => setData(res.data))
-         .catch(err => setError(err))
-         .finally(() => setLoading(false))
-     }, [])
+       setLoading(true);
+       api
+         .get("/users/me")
+         .then((res) => setData(res.data))
+         .catch((err) => setError(err))
+         .finally(() => setLoading(false));
+     }, []);
      ```
+
      **Hỏi học viên:** Cache đâu? Retry đâu? Race condition? StrictMode chạy 2 lần?
      => **Solution:** React Query (1 dòng, full features).
 
      #### ✅ The "Right" Way (React Query)
-
 
      ```tsx
      const meQueryKey = ["me"] as const;
@@ -723,6 +1004,7 @@ _"Server state không phải UI state. React Query sẽ lo cache/refetch/retry. 
 ---
 
 ### BUỔI 10: MUTATION + INVALIDATION + AUTH FLOW
+
 > **Tài liệu:** `session-10-mutations`
 
 🎬 **OPENING SCRIPT (5 phút)**
@@ -823,9 +1105,12 @@ _"Mutation là nơi học viên hay sai nhất: không disable nút, không toas
 - [ ] Refresh token: basic retry (1 time)
 - [ ] Code structure sạch (pages/components/lib/api)
 
+**Total Sessions:** Buổi 11-17 (7 buổi = 14 giờ)
+
 ---
 
 ### BUỔI 11: PROJECT SETUP + AUTH CORE
+
 > **Tài liệu:** `session-11-project-setup`
 
 🎬 **OPENING SCRIPT (5 phút)**
@@ -848,6 +1133,7 @@ _"3 tuần tiếp theo, ta build app thật. Không phải demo nhỏ, mà là F
 ---
 
 ### BUỔI 12: PROFILE FLOWS (GET ME + UPDATE ME + CHANGE PASSWORD)
+
 > **Tài liệu:** `session-12-profile-flows`
 
 🎬 **OPENING SCRIPT (5 phút)**
@@ -881,6 +1167,7 @@ _"Hôm nay ta làm profile features: xem profile, sửa profile, đổi password
 ---
 
 ### BUỔI 13: MEDIA UPLOAD + REFRESH TOKEN TESTING
+
 > **Tài liệu:** `session-13-media-refresh`
 
 🎬 **OPENING SCRIPT (5 phút)**
@@ -918,45 +1205,86 @@ _"Upload là case thực chiến: multipart, preview. Refresh token là kỹ nă
 
 ---
 
-### BUỔI 14: POLISH + TESTING + DEBUG WORKSHOP
-> **Tài liệu:** `session-14-polish-debug`
+### BUỔI 14: UI POLISH & UX STATES
+
+> **Tài liệu:** `session-14-ui-polish` **[SPLIT FROM ORIGINAL SESSION 14]**
 
 🎬 **OPENING SCRIPT (5 phút)**
-_"Hôm nay ta chỉnh sửa lỗi, polish UI/UX, và học cách debug production issues như một pro."_
+_"Hôm nay ta không viết tính năng mới. Ta chỉ làm một việc: Polish - Trang điểm cho ứng dụng. Loading/Error/Empty states đầy đủ."_
 
 **Scope buổi:**
 
-- Polish UI/UX:
-  - Loading states đầy đủ (button spinner, skeleton)
-  - Error states rõ ràng (toast + inline errors)
-  - Empty states (no data placeholders)
-  - Toast messages consistent
-- **Debug Workshop (45 phút - QUAN TRỌNG):**
-  - Chrome DevTools:
-    - Network tab: check request/response, status codes
-    - Console: check errors, warnings
-    - Breakpoints: debug logic flow
-  - React DevTools:
-    - Component tree inspection
-    - Props/State inspection
-  - Zustand DevTools (optional)
-  - React Query DevTools
-  - **Debug common errors:**
-    - 422 không show field errors → check `form.setError` mapping
-    - 401 loop → check `__isRetry` flag
-    - UI không update sau mutation → check `invalidateQueries`
-    - Refresh token không work → check interceptor logic
-    - Upload fail → check FormData field name (`image`)
+- **UI Polish (90 phút):**
+  - Loading states:
+    - Button spinner (inline loading)
+    - Skeleton components (page-level)
+    - Reusable loading components
+  - Error states:
+    - Field-level errors (form validation)
+    - Global error handler (Axios interceptor)
+    - Page-level error components with retry
+  - Empty states:
+    - No data placeholders
+    - Action-oriented empty states
+  - **Rule of Thumb:** Skeleton vs Spinner vs Progress Bar
+- **Integration (30 phút):**
+  - Apply states to all pages
+  - Toast consistency
+  - Checkpoint testing
 
 **Deliverables:**
 
-- UI polish hoàn chỉnh
-- Học viên biết debug bằng DevTools
+- All pages have Loading/Error/Empty states
+- No blank screens during async operations
+- Professional UX polish
 
 ---
 
-### BUỔI 15: INTEGRATION TESTING + BUG FIXES
-> **Tài liệu:** `session-15-integration-testing`
+### BUỔI 15: DEBUG WORKSHOP
+
+> **Tài liệu:** `session-15-debug-workshop` **[SPLIT FROM ORIGINAL SESSION 14]**
+
+🎬 **OPENING SCRIPT (5 phút)**
+_"50% thời gian đi làm là Debug. Nếu giỏi Debug, bạn làm việc nhanh gấp 3 lần người khác. Hôm nay ta học 'nghệ thuật thám tử'."_
+
+**Scope buổi:**
+
+- **Chrome DevTools Mastery (50 phút):**
+  - Network Tab deep dive:
+    - Reading request/response
+    - Status codes, headers, payload
+    - Filters and search
+  - Console Tab tricks:
+    - Live code execution
+    - Testing functions
+  - Sources Tab & Breakpoints:
+    - Setting breakpoints
+    - F10/F11 navigation (Step Over/Into)
+    - Inspecting variables
+    - Call stack analysis
+- **React & Query DevTools (30 phút):**
+  - React DevTools: Component tree, props/state inspection
+  - React Query DevTools: Cache inspection, query status
+- **Debugging Scenarios (30 phút):**
+  - Scenario 1: Flickering UI
+  - Scenario 2: Silent failure
+  - Scenario 3: Infinite spinner
+  - Scenario 4: Double fetch
+- **Debug Flow Checklist (10 phút):**
+  - Systematic debugging workflow
+  - Anti-patterns to avoid
+
+**Deliverables:**
+
+- Students can use DevTools independently
+- Can debug API errors in <5 minutes
+- Follow systematic debug workflow
+
+---
+
+### BUỔI 16: INTEGRATION TESTING + BUG FIXES
+
+> **Tài liệu:** `session-16-integration-testing` **[RENUMBERED FROM 15]**
 
 🎬 **OPENING SCRIPT (5 phút)**
 _"Hôm nay ta chạy toàn bộ flow từ đầu đến cuối, tìm bug, sửa bug. Checklist: register → login → me → update → upload → change password → logout."_
@@ -981,16 +1309,18 @@ _"Hôm nay ta chạy toàn bộ flow từ đầu đến cuối, tìm bug, sửa 
 - Fix bugs found
 
 **🛑 BEHAVIORAL RUBRIC (Tiêu chí chấm điểm tư duy):**
+
 > Ngoài việc tính năng chạy đúng, code phải "sạch" theo standard.
 
-| **Lỗi Vi Phạm (Auto Fail/Trừ nặng)** | **Lý Do** |
-| :--- | :--- |
-| ❌ Fetch API trong component | Anti-pattern, khó test/scale. |
-| ❌ Dùng `useState` lưu server data | Duplicate state với React Query -> Stale data. |
-| ❌ Mutation xong không Invalidate | UI không cập nhật dữ liệu mới. |
-| ❌ Không Loading/Error state | Bad UX. |
-| ❌ Hardcode API URL | Cannot deploy. |
-| ❌ Commit file `.env` | Security risk. |
+| **Lỗi Vi Phạm (Auto Fail/Trừ nặng)** | **Lý Do**                                      |
+| :----------------------------------- | :--------------------------------------------- |
+| ❌ Fetch API trong component         | Anti-pattern, khó test/scale.                  |
+| ❌ Dùng `useState` lưu server data   | Duplicate state với React Query -> Stale data. |
+| ❌ Mutation xong không Invalidate    | UI không cập nhật dữ liệu mới.                 |
+| ❌ Không Loading/Error state         | Bad UX.                                        |
+| ❌ Hardcode API URL                  | Cannot deploy.                                 |
+| ❌ Commit file `.env`                | Security risk.                                 |
+
 - Peer code review:
   - Checklist: có axios layer? có loading states? có error handling?
 - Write README:
@@ -1025,8 +1355,9 @@ _"Hôm nay ta chạy toàn bộ flow từ đầu đến cuối, tìm bug, sửa 
 
 ---
 
-### BUỔI 16: DEPLOYMENT + FINAL REVIEW + DEMO
-> **Tài liệu:** `session-16-deployment`
+### BUỔI 17: DEPLOYMENT + FINAL REVIEW + DEMO
+
+> **Tài liệu:** `session-17-deployment` **[RENUMBERED FROM 16]**
 
 🎬 **OPENING SCRIPT (5 phút)**
 _"Code chạy local là 50%. Deploy được lên internet cho cả thế giới dùng mới là 100%. Hôm nay ta deploy lên Vercel, config biến môi trường, và tổng kết khóa học."_
@@ -1099,7 +1430,9 @@ _"Code chạy local là 50%. Deploy được lên internet cho cả thế giới
 ---
 
 ---
+
 ## ❌ COMMON ANTI-PATTERNS (HỌC XONG PHẢI TRÁNH)
+
 > **Dính lỗi này = Trừ điểm nặng**
 
 - ❌ Gọi `axios` trực tiếp trong Component (ko qua Service layer).
@@ -1113,6 +1446,7 @@ _"Code chạy local là 50%. Deploy được lên internet cho cả thế giới
 ---
 
 ## ❓ WHY NOT...? (GIẢI ĐỘC TÂM LÝ)
+
 1. **Tại sao không Redux?** -> Quá nhiều boilerplate. Zustand + React Query xử lý 99% cases nhẹ nhàng hơn.
 2. **Tại sao không Next.js?** -> Đây là khóa Client-side Rendering (SPA). Bạn cần vững React Core trước khi học Server-side.
 3. **Tại sao không fetch bằng useEffect?** -> Không có Cache, không Deduping, không Retry tự động, quản lý Loading/Error thủ công rất cực.
@@ -1120,6 +1454,7 @@ _"Code chạy local là 50%. Deploy được lên internet cho cả thế giới
 ---
 
 ## 🚧 WHAT YOU DON'T KNOW YET (ĐỊNH HƯỚNG SAU KHÓA)
+
 > React thế giới rất rộng, khóa này chưa dạy:
 
 - **Next.js & SSR/RSC**: Server Components.
@@ -1133,6 +1468,7 @@ _"Code chạy local là 50%. Deploy được lên internet cho cả thế giới
 ---
 
 ## ❌ ANTI-GOALS (THIS COURSE DOES NOT COVER)
+
 > Những thứ **KHÔNG** dạy để tránh mất focus:
 
 - **Redux / Redux Toolkit**: Đã cũ hoặc quá overkill. Dùng Zustand + React Query là đủ 99% case.

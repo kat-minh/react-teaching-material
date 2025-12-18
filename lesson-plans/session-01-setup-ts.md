@@ -4,7 +4,7 @@
 - **Title:** Setup Environment, Component Thinking, and TypeScript Survival Kit
 - **Duration:** 120 minutes (2 hours)
 - **Goal:** Students will set up a production-ready React environment (Vite + Tailwind v4 + TS) and master the 20% of TypeScript used in 80% of React tasks.
-- **Outcome:** A running "Hello World" app with Absolute Imports, Tailwind v4 configured, and no TypeScript errors.
+- **Outcome:** A running "Hello World" app with Absolute Imports, Tailwind v4 configured, basic `useState` usage with TypeScript, and no errors.
 
 ## 2️⃣ INSTRUCTOR OPENING SCRIPT
 _"Chào mọi người. Các bạn đã học xong Backend MERN, đã biết viết API trả về JSON. Nhưng Frontend không chỉ là 'hiện JSON lên màn hình'. Frontend là về việc TỔ CHỨC UI sao cho không phải copy-paste code._
@@ -24,6 +24,7 @@ _Hôm nay ta sẽ làm 2 việc quan trọng nhất mà nếu sai ngay từ đ�
 > Chỉ cần nhớ:
 > - Props có type
 > - Event có type
+> - **useState** căn bản
 > - IDE gợi ý là bạn đang đi đúng hướng
 >
 > Chi tiết type syntax sẽ quen dần qua thực hành. Hôm nay chỉ cần "chạy được, không đỏ".
@@ -211,7 +212,7 @@ export default function MyInput({ placeholder, onValueChange }: MyInputProps) {
     />
   );
 }
-
+```
 > **📌 RULE OF THUMB: EVENT TYPES**
 > _"Quan trọng hơn nhớ máy móc:"_
 >
@@ -223,7 +224,7 @@ export default function MyInput({ placeholder, onValueChange }: MyInputProps) {
 > - Nếu bí type → hover vào prop HTML (ví dụ `onChange` của `<input>`)
 > - 90% form chỉ dùng `ChangeEvent` và `FormEvent`
 > - Không cần học vẹt, cần biết cách tra
-```
+
 
 #### Step 3: Use Components in App
 Update `src/App.tsx`.
