@@ -198,7 +198,7 @@ _"Đây là cách viết CV để HR/Tech Lead chú ý:"_
 **✅ Hãy viết:**
 - **Live Demo:** `https://shopping-cart.vercel.app`
 - **GitHub Repo:** `https://github.com/yourname/shopping-cart`
-- **Tech Stack:** React 19, TypeScript, TanStack Query, Zustand, Tailwind v4
+- **Tech Stack:** React 18, TypeScript, TanStack Query, Zustand, Tailwind v4
 - **Highlight:** "Built & deployed a production-ready SPA with auto-refresh token strategy"
 
 > **Pro Tip:** Thêm screenshot đẹp vào README. Ảnh đẹp = Click nhiều.

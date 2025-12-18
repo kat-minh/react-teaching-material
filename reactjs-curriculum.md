@@ -16,7 +16,7 @@
 ### Build tool & Core
 
 - Vite
-- React 19 (Client Features focus)
+- React 18 (Client Features focus)
 - TypeScript (Frontend patterns)
 
 ### Routing
@@ -213,7 +213,7 @@ interface ApiError {
 
 **Checklist Tuần 1:**
 
-- [ ] Học viên setup được Vite + React 19 + TS
+- [ ] Học viên setup được Vite + React 18 + TS
 - [ ] Hiểu JSX, component thinking
 - [ ] Nắm TypeScript cho React (Props, State, Events)
 - [ ] Render list + state cơ bản
@@ -273,7 +273,7 @@ _"Các bạn đã biết HTML/CSS/JS, đã biết call API trong dự án MERN. 
 
 1. **🎯 Mục tiêu**
 
-   - Setup Vite + React 19 + TS + **Tailwind v4**
+   - Setup Vite + React 18 + TS + **Tailwind v4**
    - Config **Absolute Imports** (`@/components`, `@/lib`)
    - Folder structure cơ bản
    - **TypeScript Survival Kit**: Props, Events, Hooks generics (30 phút)

@@ -59,6 +59,11 @@ npm create vite@latest shopping-cart -- --template react-ts
 cd shopping-cart
 # Instructor Explain: "Ta cần cài đủ đồ chơi ngay từ đầu để tránh phải dừng lại cài lắt nhắt."
 npm install
+
+# Cài đặt React 18 (downgrade từ version mặc định nếu cần)
+npm install react@18 react-dom@18
+
+# Cài đặt các dependencies cần thiết
 npm install axios zustand @tanstack/react-query react-router-dom react-hook-form zod @hookform/resolvers clsx tailwind-merge lucide-react sonner
 ```
 *(Chờ install xong, setup Tailwind v4 theo hướng dẫn ở Session 06 - Copy file index.css)*

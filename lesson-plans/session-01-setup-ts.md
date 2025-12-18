@@ -52,6 +52,9 @@ _"Đầu tiên, ta dùng Vite. Nó nhanh hơn Create-React-App 100 lần."_
 npm create vite@latest shopping-card-fe -- --template react-ts
 cd shopping-card-fe
 npm install
+
+# Cài đặt React 18 (downgrade từ version mặc định nếu cần)
+npm install react@18 react-dom@18
 ```
 
 #### Step 2: Install Tailwind v4 (The New Standard)

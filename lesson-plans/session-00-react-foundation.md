@@ -243,6 +243,9 @@ function Bad() {
 npm create vite@latest hello-react -- --template react
 cd hello-react
 npm install
+
+# Cài đặt React 18 (downgrade từ version mặc định nếu cần)
+npm install react@18 react-dom@18
 npm run dev
 ```
 

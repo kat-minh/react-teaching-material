@@ -30,7 +30,7 @@ Khóa học tập trung vào **xử lý API trong React** và **kiến trúc Fro
 
 ### Core
 - **Vite** - Build tool
-- **React 19** - Client features focus
+- **React 18** - Client features focus
 - **TypeScript** - Frontend patterns
 
 ### Routing

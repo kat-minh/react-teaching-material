@@ -126,7 +126,7 @@ Each lesson plan follows this 10-section structure:
 
 ## 🛠️ Tech Stack
 
-- **Core:** React 19, TypeScript, Vite
+- **Core:** React 18, TypeScript, Vite
 - **Routing:** React Router v6
 - **State Management:** 
   - Zustand (Client/Global state)
