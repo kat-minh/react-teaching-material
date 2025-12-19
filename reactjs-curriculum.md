@@ -507,7 +507,7 @@ _"React không mạnh ở chỗ viết HTML trong JS, mà mạnh ở chỗ rende
      }
      ```
 
-     > _"Quan trọng: Parent re-render → tất cả Child re-render (mặc định). Session sau học React.memo để optimize."_
+     > _"Quan trọng: Parent re-render → tất cả Child re-render (mặc định)."_
 
    - **Concept:** Virtual DOM Diffing (React không update DOM thật ngay, mà tính toán sự khác biệt).
    - **❗ Rule of Thumb (Production):** Hạn chế derived state, chỉ dùng state cho data thay đổi theo thời gian và kích hoạt render.
@@ -631,7 +631,7 @@ _"Bảo vệ route là bước 1 của auth. Chưa login thì không cho vào /m
    - **Rule 1:** Effect = Sync với external system (API, DOM, Timer).
    - **Rule 2:** Dependency Array `[]` = Run once (Mount).
    - **Rule 3:** Dependency `[prop, state]` = Run khi deps đổi.
-   - **Red Flag:** Không dùng Effect để validate form hoặc tính toán derived state (dùng `useMemo` hoặc logic thường).
+   - **Red Flag:** Không dùng Effect để validate form hoặc tính toán derived state.
    - **Demo:** Infinite loop khi quên dependency.
    - **❗ Rule of Thumb (Production):** Dependency array luôn phải đầy đủ (eslint-plugin-react-hooks sẽ nhắc). Đừng bao giờ nói dối React về deps.
 
@@ -1473,5 +1473,6 @@ _"Code chạy local là 50%. Deploy được lên internet cho cả thế giới
 
 - **Redux / Redux Toolkit**: Đã cũ hoặc quá overkill. Dùng Zustand + React Query là đủ 99% case.
 - **Next.js / SSR**: Đây là khóa Client-side Rendering (SPA). Next.js là khóa sau.
-- **Advanced Performance (useTransition, Suspense)**: Chỉ dạy cơ bản (memo, useMemo).
+- **Advanced Performance (useTransition, Suspense)**: Chỉ dạy cơ bản nếu có thời gian (memo, useMemo).
 - **Micro-frontends**: Quá nâng cao và hiếm gặp.
+
